@@ -1,5 +1,6 @@
 package com.example.focuspro
 
+import LanguageViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,7 +12,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.focuspro.navigation.NavGraph
 import com.example.focuspro.repository.AuthRepository
 import com.example.focuspro.repository.FirestoreRepository
-import com.example.focuspro.settings.language.LanguageViewModel
 
 import com.example.focuspro.ui.theme.FocusProTheme
 import com.example.focuspro.viewmodel.AuthViewModel

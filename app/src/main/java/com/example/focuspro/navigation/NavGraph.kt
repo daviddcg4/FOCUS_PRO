@@ -4,6 +4,7 @@ import ChatScreen
 import DailySummaryScreen
 import DashboardScreen
 import HomeScreen
+import LanguageViewModel
 
 import LoginScreen
 import MotivationScreen
@@ -17,7 +18,6 @@ import androidx.navigation.compose.composable
 import com.example.focuspro.analyticsReports.ActivityRingsScreen
 import com.example.focuspro.pomodoro.PomodoroTimerScreen
 import com.example.focuspro.profile.ProfileScreen
-import com.example.focuspro.settings.language.LanguageViewModel
 import com.example.focuspro.taskManager.view.TaskManagerScreen
 import com.example.focuspro.ui.SettingsScreen
 

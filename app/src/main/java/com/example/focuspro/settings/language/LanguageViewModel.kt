@@ -1,24 +1,37 @@
-package com.example.focuspro.settings.language
-
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 
-class LanguageViewModel(context: Context) : ViewModel() {
-    private val languageManager = LanguageManager(context)
+class LanguageViewModel(private val context: Context) : ViewModel() {
 
-    // Estado para el idioma seleccionado
-    private val _selectedLanguage = MutableStateFlow(languageManager.getLanguage())
-    val selectedLanguage: StateFlow<String> get() = _selectedLanguage
+    private val _selectedLanguage = MutableStateFlow(getCurrentLanguage())
+    val selectedLanguage: StateFlow<String> = _selectedLanguage
 
-    // Cambia el idioma y actualiza el estado
     fun changeLanguage(languageCode: String) {
-        viewModelScope.launch {
-            languageManager.saveLanguage(languageCode)
-            _selectedLanguage.value = languageCode
-        }
+        // Guarda el idioma en SharedPreferences o cualquier otro almacenamiento
+        saveLanguage(languageCode)
+        _selectedLanguage.value = languageCode
+        updateLanguage(context, languageCode)
+    }
+
+    private fun getCurrentLanguage(): String {
+        val prefs = context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+        return prefs.getString("language", "en") ?: "en"
+    }
+
+    private fun saveLanguage(languageCode: String) {
+        val prefs = context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+        prefs.edit().putString("language", languageCode).apply()
+    }
+
+    private fun updateLanguage(context: Context, languageCode: String) {
+        val locale = java.util.Locale(languageCode)
+        java.util.Locale.setDefault(locale)
+
+        val config = context.resources.configuration
+        config.setLocale(locale)
+
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
 }

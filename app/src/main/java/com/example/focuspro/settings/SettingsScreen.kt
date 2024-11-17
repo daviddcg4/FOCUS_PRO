@@ -1,5 +1,6 @@
 package com.example.focuspro.ui
 
+import LanguageViewModel
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,12 +14,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
 import androidx.navigation.NavController
 import com.example.focuspro.R
-import com.example.focuspro.settings.language.LanguageViewModel
-import com.example.focuspro.viewmodel.AuthViewModel
 
+import com.example.focuspro.viewmodel.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -29,15 +28,15 @@ fun SettingsScreen(
 ) {
     var isDarkTheme by remember { mutableStateOf(false) }
     var isNotificationsEnabled by remember { mutableStateOf(true) }
-    var selectedLanguage by remember { mutableStateOf(languageViewModel.selectedLanguage.value) }
+    val selectedLanguage by languageViewModel.selectedLanguage.collectAsState()
 
-    val languages = listOf("en", "es", "fr", "de") // Lista de códigos de idioma
+    val languages = listOf("en", "es", "fr", "de") // Lista de idiomas disponibles
 
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(id = R.string.settings)) },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
+
             )
         }
     ) { paddingValues ->
@@ -61,7 +60,6 @@ fun SettingsScreen(
                     languages = languages,
                     onLanguageSelected = { language ->
                         languageViewModel.changeLanguage(language)
-                        selectedLanguage = language
                     }
                 )
             }
@@ -148,7 +146,7 @@ fun LanguageSetting(
                                 onLanguageSelected(language)
                                 expanded = false
                             },
-                            text = { Text(text = language) }
+                            text = { Text(text = language.uppercase()) }
                         )
                     }
                 }

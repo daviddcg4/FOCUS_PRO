@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.focuspro.R
-
 import com.example.focuspro.viewmodel.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,6 +27,7 @@ fun SettingsScreen(
 ) {
     var isDarkTheme by remember { mutableStateOf(false) }
     var isNotificationsEnabled by remember { mutableStateOf(true) }
+    var showTermsDialog by remember { mutableStateOf(false) } // Estado para mostrar el diálogo
     val selectedLanguage by languageViewModel.selectedLanguage.collectAsState()
 
     val languages = listOf("en", "es", "fr", "de") // Lista de idiomas disponibles
@@ -36,7 +36,6 @@ fun SettingsScreen(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(id = R.string.settings)) },
-
             )
         }
     ) { paddingValues ->
@@ -53,16 +52,16 @@ fun SettingsScreen(
                     onThemeChanged = { isDarkTheme = it }
                 )
             }
-
-            item {
-                LanguageSetting(
-                    selectedLanguage = selectedLanguage,
-                    languages = languages,
-                    onLanguageSelected = { language ->
-                        languageViewModel.changeLanguage(language)
-                    }
-                )
-            }
+//
+//            item {
+//                LanguageSetting(
+//                    selectedLanguage = selectedLanguage,
+//                    languages = languages,
+//                    onLanguageSelected = { language ->
+//                        languageViewModel.changeLanguage(language)
+//                    }
+//                )
+//            }
 
             item { SettingsCategoryTitle(stringResource(id = R.string.notifications)) }
 
@@ -75,14 +74,31 @@ fun SettingsScreen(
 
             item { SettingsCategoryTitle(stringResource(id = R.string.information)) }
 
+            // Opción para ver Términos y Condiciones
             item {
-                InformationSetting(label = stringResource(id = R.string.terms_conditions)) { /* Handle click */ }
+                InformationSetting(label = stringResource(id = R.string.terms_conditions)) {
+                    showTermsDialog = true // Mostrar diálogo al hacer clic
+                }
             }
 
             item {
-                InformationSetting(label = stringResource(id = R.string.about_us)) { /* Handle click */ }
+                InformationSetting(label = stringResource(id = R.string.about_us)) { /* Acción al hacer clic */ }
             }
         }
+    }
+
+    // Diálogo de Términos y Condiciones
+    if (showTermsDialog) {
+        AlertDialog(
+            onDismissRequest = { showTermsDialog = false },
+            title = { Text(stringResource(id = R.string.terms_conditions)) },
+            text = { Text(stringResource(id = R.string.terms_and_conditions)) },
+            confirmButton = {
+                TextButton(onClick = { showTermsDialog = false }) {
+                    Text(stringResource(id = R.string.ok))
+                }
+            }
+        )
     }
 }
 

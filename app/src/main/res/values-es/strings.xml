@@ -1,0 +1,143 @@
+<resources>
+    <!--        pantalla de anillos de actividad -->
+    <string name="activity_rings_title">Anillos de Actividad</string>
+    <string name="focus_label" translatable="false">Enfoque</string>
+    <string name="break_label">Descanso</string>
+    <string name="tasks_label">Tareas</string>
+    <string name="percentage_format">%d%%</string>
+
+    <!--        Pantalla de inicio de sesión -->
+    <string name="login_email_label">Correo Electrónico</string>
+    <string name="login_password_label">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_button">Registrar</string>
+    <string name="login_error_message">Error al iniciar sesión. Por favor verifica tus credenciales.</string>
+    <string name="show_password_description">Mostrar contraseña</string>
+    <string name="hide_password_description">Ocultar contraseña</string>
+
+    <!--        Pantalla de registro -->
+    <string name="register_email_label">Correo Electrónico</string>
+    <string name="register_password_label">Contraseña</string>
+    <string name="register_confirm_password_label">Confirmar Contraseña</string>
+    <string name="passwords_match_message">¡Las contraseñas coinciden!</string>
+    <string name="passwords_do_not_match_message">¡Las contraseñas no coinciden!</string>
+    <string name="passwords_do_not_match_error">Las contraseñas no coinciden</string>
+
+    <!--        Pantalla de inicio -->
+    <string name="app_name">FocusPro</string>
+    <string name="home_title">Inicio</string>
+    <string name="welcome_message">¡Bienvenido a FocusPro!</string>
+    <string name="home_description">Esta es tu pantalla de inicio donde puedes navegar a través de varias opciones.</string>
+    <string name="dashboard">Tablero</string>
+    <string name="profile">Perfil</string>
+    <string name="settings">Configuraciones</string>
+    <string name="pomodoro_timer">Temporizador Pomodoro</string>
+    <string name="task_manager">Administrador de Tareas</string>
+    <string name="calendar">Calendario</string>
+    <string name="progress">Progreso</string>
+    <string name="motivation">Motivación</string>
+    <string name="daily_summary">Resumen Diario</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="chat">Chat</string>
+    <string name="activity_rings">Anillos de Actividad</string>
+
+    <!--        Pantalla del Tablero -->
+    <string name="focus_time">Tiempo Enfocado</string>
+    <string name="tasks_completed">Tareas Completadas</string>
+    <string name="priority_tasks">Tareas Prioritarias</string>
+    <string name="finish_presentation">Terminar la presentación</string>
+    <string name="study_exam">Estudiar para el examen</string>
+    <string name="review_code">Revisar código</string>
+
+    <!--        pantalla de resumen diario -->
+    <string name="completed_tasks">Tareas Completadas</string>
+    <string name="pending_tasks">Tareas Pendientes</string>
+    <string name="total_active_time">Tiempo Activo Total: %1$s</string>
+
+    <string name="task_workout">Entrenamiento</string>
+    <string name="task_read_pages">Leer 30 páginas</string>
+    <string name="task_meeting_team">Reunión con el equipo</string>
+    <string name="task_finish_report">Terminar el informe del proyecto</string>
+    <string name="task_grocery_shopping">Hacer la compra</string>
+
+    <!--        pantalla de metas -->
+    <string name="goals_title">Metas</string>
+    <string name="goal_placeholder">Ingresa tu meta</string>
+    <string name="add_goal_button">Agregar Meta</string>
+    <string name="delete_goal">Eliminar Meta</string>
+    <string name="increase_progress_button">Aumentar Progreso</string>
+    <string name="complete_button">Completar</string>
+
+    <!--    pantalla de motivación -->
+
+    <string name="goal_read_book">Leer un libro cada mes</string>
+    <string name="goal_exercise">Ejercitarse 3 veces a la semana</string>
+    <string name="goal_learn_skill">Aprender una nueva habilidad</string>
+    <string name="goal_meditate">Meditar diariamente</string>
+    <string name="goal_save_money">Ahorrar dinero para viajar</string>
+    <string name="button_get_quote">Obtener una Nueva Cita</string>
+    <string name="title_my_goals">Mis Metas</string>
+
+    <string name="motivational_quote_1">La única manera de hacer un gran trabajo es amar lo que haces. - Steve Jobs</string>
+    <string name="motivational_quote_2">Cree que puedes y ya estás a medio camino. - Theodore Roosevelt</string>
+    <string name="motivational_quote_3">El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. - Albert Schweitzer</string>
+    <string name="motivational_quote_4">No mires el reloj; haz lo que él hace. Sigue adelante. - Sam Levenson</string>
+    <string name="motivational_quote_5">Nunca eres demasiado viejo para fijar otra meta o soñar un nuevo sueño. - C.S. Lewis</string>
+    <string name="get_new_quote">Obtener una Nueva Cita</string>
+    <string name="my_goals">Mis Metas</string>
+
+    <!--    pantalla del temporizador pomodoro -->
+
+    <string name="pomodoro_timer_title">Temporizador Pomodoro</string>
+    <string name="focus_time_label">Tiempo de Enfoque (min)</string>
+    <string name="break_time_label">Tiempo de Descanso (min)</string>
+    <string name="start_button_label">Iniciar</string>
+    <string name="pause_button_label">Pausar</string>
+    <string name="reset_button_label">Restablecer</string>
+
+    <!--    pantalla de perfil -->
+
+    <string name="profile_title">Perfil</string>
+    <string name="display_name_label">Nombre para Mostrar:</string>
+    <string name="email_label">Correo Electrónico:</string>
+    <string name="change_password_button">Cambiar Contraseña</string>
+    <string name="new_password_label">Nueva Contraseña</string>
+    <string name="confirm_new_password_label">Confirmar Nueva Contraseña</string>
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="passwords_do_not_match">Las contraseñas no coinciden</string>
+
+    <!-- pantalla de progreso -->
+
+    <string name="progress_screen_title">Seguimiento del Progreso</string>
+    <string name="progress_percentage">%1$d%%</string> <!-- Utiliza %1$d para insertar el valor del progreso -->
+    <string name="task_item_label">Tarea</string>
+    <string name="task_progress_label">Progreso</string>
+    <string name="task_completed">Completado</string>
+    <string name="task_in_progress">En Progreso</string>
+    <string name="task_not_started">No Iniciado</string>
+
+    <!-- pantalla de configuraciones -->
+    <string name="general">General</string>
+    <string name="information">Información</string>
+    <string name="dark_theme">Tema Oscuro</string>
+    <string name="dark_theme_description">Cambiar entre modo claro y oscuro</string>
+    <string name="language">Idioma</string>
+    <string name="language_description">Elige tu idioma preferido</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="notifications_description">Activar o desactivar notificaciones</string>
+    <string name="terms_conditions">Términos y Condiciones</string>
+    <string name="about_us">Sobre Nosotros</string>
+
+    <!--    pantalla del administrador de tareas -->
+    <string name="task_manager_title">Administrador de Tareas</string>
+    <string name="add_task_button">Agregar Tarea</string>
+    <string name="task_title_label">Título de la Tarea</string>
+    <string name="priority_label">Prioridad</string>
+    <string name="add_task_dialog_title">Agregar Nueva Tarea</string>
+    <string name="add_task_button_text">Agregar Tarea</string>
+    <string name="cancel_button_text">Cancelar</string>
+    <string name="delete_task_content_description">Eliminar Tarea</string>
+    <string name="priority_low">Baja</string>
+    <string name="priority_medium">Media</string>
+    <string name="priority_high">Alta</string>
+</resources>

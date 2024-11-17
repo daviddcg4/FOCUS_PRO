@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "778948618843",
+    "project_id": "focuspro-55c3e",
+    "storage_bucket": "focuspro-55c3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778948618843:android:cc0bc46ce7b198cac6ad7e",
+        "android_client_info": {
+          "package_name": "com.example.focuspro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt4k4Wnm0lPZikhsVOA9ERWB1WTg2Oo8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

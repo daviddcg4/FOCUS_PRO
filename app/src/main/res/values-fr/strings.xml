@@ -1,0 +1,143 @@
+<resources>
+    <!--        écran des cercles d'activité -->
+    <string name="activity_rings_title">Cercles d\'Activité</string>
+    <string name="focus_label" translatable="false">Concentration</string>
+    <string name="break_label">Pause</string>
+    <string name="tasks_label">Tâches</string>
+    <string name="percentage_format">%d%%</string>
+
+    <!--        Écran de connexion -->
+    <string name="login_email_label">Email</string>
+    <string name="login_password_label">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="register_button">S\'inscrire</string>
+    <string name="login_error_message">Erreur de connexion. Veuillez vérifier vos identifiants.</string>
+    <string name="show_password_description">Afficher le mot de passe</string>
+    <string name="hide_password_description">Masquer le mot de passe</string>
+
+    <!--        Écran d'inscription -->
+    <string name="register_email_label">Email</string>
+    <string name="register_password_label">Mot de passe</string>
+    <string name="register_confirm_password_label">Confirmer le mot de passe</string>
+    <string name="passwords_match_message">Les mots de passe correspondent !</string>
+    <string name="passwords_do_not_match_message">Les mots de passe ne correspondent pas !</string>
+    <string name="passwords_do_not_match_error">Les mots de passe ne correspondent pas</string>
+
+    <!--        Écran d'accueil -->
+    <string name="app_name">FocusPro</string>
+    <string name="home_title">Accueil</string>
+    <string name="welcome_message">Bienvenue dans FocusPro !</string>
+    <string name="home_description">Ceci est votre écran d\'accueil où vous pouvez naviguer à travers diverses options.</string>
+    <string name="dashboard">Tableau de bord</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Paramètres</string>
+    <string name="pomodoro_timer">Minuteur Pomodoro</string>
+    <string name="task_manager">Gestionnaire de Tâches</string>
+    <string name="calendar">Calendrier</string>
+    <string name="progress">Progrès</string>
+    <string name="motivation">Motivation</string>
+    <string name="daily_summary">Résumé Quotidien</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="chat">Chat</string>
+    <string name="activity_rings">Cercles d\'Activité</string>
+
+    <!--        Écran du Tableau de bord -->
+    <string name="focus_time">Temps de Concentration</string>
+    <string name="tasks_completed">Tâches Complétées</string>
+    <string name="priority_tasks">Tâches Prioritaires</string>
+    <string name="finish_presentation">Terminer la présentation</string>
+    <string name="study_exam">Étudier pour l\'examen</string>
+    <string name="review_code">Réviser le code</string>
+
+    <!--        écran de résumé quotidien -->
+    <string name="completed_tasks">Tâches Complétées</string>
+    <string name="pending_tasks">Tâches En Attente</string>
+    <string name="total_active_time">Temps Actif Total : %1$s</string>
+
+    <string name="task_workout">Entraînement</string>
+    <string name="task_read_pages">Lire 30 pages</string>
+    <string name="task_meeting_team">Réunion avec l\'équipe</string>
+    <string name="task_finish_report">Terminer le rapport de projet</string>
+    <string name="task_grocery_shopping">Faire les courses</string>
+
+    <!--        écran des objectifs -->
+    <string name="goals_title">Objectifs</string>
+    <string name="goal_placeholder">Entrez votre objectif</string>
+    <string name="add_goal_button">Ajouter un Objectif</string>
+    <string name="delete_goal">Supprimer l\'Objectif</string>
+    <string name="increase_progress_button">Augmenter le Progrès</string>
+    <string name="complete_button">Compléter</string>
+
+    <!--    écran de motivation -->
+
+    <string name="goal_read_book">Lire un livre chaque mois</string>
+    <string name="goal_exercise">Faire de l\'exercice 3 fois par semaine</string>
+    <string name="goal_learn_skill">Apprendre une nouvelle compétence</string>
+    <string name="goal_meditate">Méditer quotidiennement</string>
+    <string name="goal_save_money">Économiser de l\'argent pour voyager</string>
+    <string name="button_get_quote">Obtenir une Nouvelle Citation</string>
+    <string name="title_my_goals">Mes Objectifs</string>
+
+    <string name="motivational_quote_1">La seule façon de faire du bon travail est d\'aimer ce que vous faites. - Steve Jobs</string>
+    <string name="motivational_quote_2">Croyez que vous pouvez et vous êtes déjà à mi-chemin. - Theodore Roosevelt</string>
+    <string name="motivational_quote_3">Le succès n\'est pas la clé du bonheur. Le bonheur est la clé du succès. - Albert Schweitzer</string>
+    <string name="motivational_quote_4">Ne regardez pas l\'horloge; faites ce qu\'elle fait. Continuez. - Sam Levenson</string>
+    <string name="motivational_quote_5">Vous n\'êtes jamais trop vieux pour fixer un nouvel objectif ou rêver d\'un nouveau rêve. - C.S. Lewis</string>
+    <string name="get_new_quote">Obtenir une Nouvelle Citation</string>
+    <string name="my_goals">Mes Objectifs</string>
+
+    <!--    écran du minuteur pomodoro -->
+
+    <string name="pomodoro_timer_title">Minuteur Pomodoro</string>
+    <string name="focus_time_label">Temps de Concentration (min)</string>
+    <string name="break_time_label">Temps de Pause (min)</string>
+    <string name="start_button_label">Démarrer</string>
+    <string name="pause_button_label">Mettre en Pause</string>
+    <string name="reset_button_label">Réinitialiser</string>
+
+    <!--    écran de profil -->
+
+    <string name="profile_title">Profil</string>
+    <string name="display_name_label">Nom Affiché :</string>
+    <string name="email_label">Email :</string>
+    <string name="change_password_button">Changer le Mot de Passe</string>
+    <string name="new_password_label">Nouveau Mot de Passe</string>
+    <string name="confirm_new_password_label">Confirmer le Nouveau Mot de Passe</string>
+    <string name="change_password">Changer le Mot de Passe</string>
+    <string name="passwords_do_not_match">Les mots de passe ne correspondent pas</string>
+
+    <!-- écran de suivi des progrès -->
+
+    <string name="progress_screen_title">Suivi des Progrès</string>
+    <string name="progress_percentage">%1$d%%</string> <!-- Utilise %1$d pour insérer la valeur du progrès -->
+    <string name="task_item_label">Tâche</string>
+    <string name="task_progress_label">Progrès</string>
+    <string name="task_completed">Complété</string>
+    <string name="task_in_progress">En Cours</string>
+    <string name="task_not_started">Non Démarré</string>
+
+    <!-- écran des paramètres -->
+    <string name="general">Général</string>
+    <string name="information">Informations</string>
+    <string name="dark_theme">Thème Sombre</string>
+    <string name="dark_theme_description">Changer entre le mode clair et sombre</string>
+    <string name="language">Langue</string>
+    <string name="language_description">Choisissez votre langue préférée</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_description">Activer ou désactiver les notifications</string>
+    <string name="terms_conditions">Termes et Conditions</string>
+    <string name="about_us">À Propos de Nous</string>
+
+    <!--    écran du gestionnaire de tâches -->
+    <string name="task_manager_title">Gestionnaire de Tâches</string>
+    <string name="add_task_button">Ajouter une Tâche</string>
+    <string name="task_title_label">Titre de la Tâche</string>
+    <string name="priority_label">Priorité</string>
+    <string name="add_task_dialog_title">Ajouter une Nouvelle Tâche</string>
+    <string name="add_task_button_text">Ajouter une Tâche</string>
+    <string name="cancel_button_text">Annuler</string>
+    <string name="delete_task_content_description">Supprimer la Tâche</string>
+    <string name="priority_low">Basse</string>
+    <string name="priority_medium">Moyenne</string>
+    <string name="priority_high">Élevée</string>
+</resources>

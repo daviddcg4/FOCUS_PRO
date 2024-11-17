@@ -145,4 +145,40 @@
     <string name="priority_low">Low</string>
     <string name="priority_medium">Medium</string>
     <string name="priority_high">High</string>
+
+
+    <!-- Otros recursos de texto -->
+
+    <string name="terms_and_conditions">
+        Términos y Condiciones de Uso:
+
+        1. **Aceptación de los Términos**
+        Al acceder y utilizar esta aplicación, usted acepta estos Términos y Condiciones en su totalidad. Si no está de acuerdo con estos términos, debe abstenerse de utilizar la aplicación.
+
+        2. **Uso de la Aplicación**
+        Esta aplicación está destinada para su uso personal y no comercial. Usted se compromete a no usar la aplicación para fines ilegales o no autorizados.
+
+        3. **Privacidad**
+        Respetamos su privacidad. Consulte nuestra Política de Privacidad para más detalles sobre cómo recopilamos, utilizamos y protegemos su información personal.
+
+        4. **Modificaciones de los Términos**
+        Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones se publicarán en esta página, y se considerarán efectivas inmediatamente después de su publicación.
+
+        5. **Limitación de Responsabilidad**
+        La aplicación se proporciona "tal cual". No garantizamos que la aplicación esté libre de errores o interrupciones, y no nos hacemos responsables por cualquier daño que surja de su uso.
+
+        6. **Ley Aplicable**
+        Estos términos se regirán e interpretarán de acuerdo con las leyes del país en el que se ofrece la aplicación.
+
+        7. **Aceptación de los Términos**
+        Al hacer clic en "Aceptar", usted confirma que ha leído, comprendido y acepta estos Términos y Condiciones.
+
+        Si tiene alguna pregunta sobre estos términos, puede contactarnos en [correo electrónico].
+    </string>
+    <string name="acept_terms_button">Aceptar terminos y condiciones</string>
+    <string name="terms_title">Terminos y condiciones</string>
+    <string name="accept_terms_button">Aceptar terminos y condiciones</string>
+    <string name="decline_terms_button">Denegar terminos y condiciones</string>
+
+
 </resources>

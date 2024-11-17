@@ -39,7 +39,7 @@ fun DashboardScreen(navController: NavController, viewModel: TaskViewModel = vie
             TopAppBar(
                 title = { Text(stringResource(id = R.string.app_name)) },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = Color(0xFF3F51B5),
+                    containerColor = Color(0xFF4C5990),
                     titleContentColor = Color.White
                 )
             )

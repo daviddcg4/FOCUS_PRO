@@ -17,25 +17,27 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.focuspro.R
 import com.example.focuspro.viewmodel.AuthViewModel
+import com.example.focuspro.viewmodel.ThemeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
     authViewModel: AuthViewModel,
     navController: NavController,
-    languageViewModel: LanguageViewModel
+    languageViewModel: LanguageViewModel,
+    themeViewModel: ThemeViewModel
 ) {
-    var isDarkTheme by remember { mutableStateOf(false) }
     var isNotificationsEnabled by remember { mutableStateOf(true) }
-    var showTermsDialog by remember { mutableStateOf(false) } // Estado para mostrar el diálogo
     val selectedLanguage by languageViewModel.selectedLanguage.collectAsState()
+    val isDarkTheme by themeViewModel.isDarkTheme.collectAsState()
 
-    val languages = listOf("en", "es", "fr", "de") // Lista de idiomas disponibles
+    val languages = listOf("en", "es", "fr", "de") // Idiomas disponibles
+    var showTermsDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(id = R.string.settings)) },
+                title = { Text(stringResource(id = R.string.settings)) }
             )
         }
     ) { paddingValues ->
@@ -44,15 +46,16 @@ fun SettingsScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
+            // Categoría: General
             item { SettingsCategoryTitle(stringResource(id = R.string.general)) }
 
             item {
                 ThemeSetting(
                     isDarkTheme = isDarkTheme,
-                    onThemeChanged = { isDarkTheme = it }
+                    onThemeChanged = { themeViewModel.toggleTheme() }
                 )
             }
-//
+
 //            item {
 //                LanguageSetting(
 //                    selectedLanguage = selectedLanguage,
@@ -63,6 +66,7 @@ fun SettingsScreen(
 //                )
 //            }
 
+            // Categoría: Notificaciones
             item { SettingsCategoryTitle(stringResource(id = R.string.notifications)) }
 
             item {
@@ -72,22 +76,22 @@ fun SettingsScreen(
                 )
             }
 
+            // Categoría: Información
             item { SettingsCategoryTitle(stringResource(id = R.string.information)) }
 
-            // Opción para ver Términos y Condiciones
             item {
                 InformationSetting(label = stringResource(id = R.string.terms_conditions)) {
-                    showTermsDialog = true // Mostrar diálogo al hacer clic
+                    showTermsDialog = true
                 }
             }
 
             item {
-                InformationSetting(label = stringResource(id = R.string.about_us)) { /* Acción al hacer clic */ }
+                InformationSetting(label = stringResource(id = R.string.about_us)) { /* Acción para "Sobre nosotros" */ }
             }
         }
     }
 
-    // Diálogo de Términos y Condiciones
+    // Diálogo para los términos y condiciones
     if (showTermsDialog) {
         AlertDialog(
             onDismissRequest = { showTermsDialog = false },
@@ -102,6 +106,7 @@ fun SettingsScreen(
     }
 }
 
+// Títulos de las categorías en la configuración
 @Composable
 fun SettingsCategoryTitle(title: String) {
     Text(
@@ -117,6 +122,7 @@ fun SettingsCategoryTitle(title: String) {
     )
 }
 
+// Configuración de tema oscuro
 @Composable
 fun ThemeSetting(isDarkTheme: Boolean, onThemeChanged: (Boolean) -> Unit) {
     SettingItem(
@@ -131,6 +137,7 @@ fun ThemeSetting(isDarkTheme: Boolean, onThemeChanged: (Boolean) -> Unit) {
     )
 }
 
+// Configuración de idioma
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LanguageSetting(
@@ -146,7 +153,7 @@ fun LanguageSetting(
         trailingContent = {
             Box {
                 Text(
-                    text = selectedLanguage,
+                    text = selectedLanguage.uppercase(),
                     modifier = Modifier
                         .clickable { expanded = !expanded }
                         .padding(16.dp)
@@ -171,6 +178,7 @@ fun LanguageSetting(
     )
 }
 
+// Configuración de notificaciones
 @Composable
 fun NotificationSetting(
     isNotificationsEnabled: Boolean,
@@ -188,6 +196,7 @@ fun NotificationSetting(
     )
 }
 
+// Configuración de elementos informativos
 @Composable
 fun InformationSetting(label: String, onClick: () -> Unit) {
     SettingItem(
@@ -197,6 +206,7 @@ fun InformationSetting(label: String, onClick: () -> Unit) {
     )
 }
 
+// Elemento individual de configuración
 @Composable
 fun SettingItem(
     title: String,

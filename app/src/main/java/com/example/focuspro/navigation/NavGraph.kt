@@ -22,6 +22,7 @@ import com.example.focuspro.taskManager.view.TaskManagerScreen
 import com.example.focuspro.ui.SettingsScreen
 
 import com.example.focuspro.viewmodel.AuthViewModel
+import com.example.focuspro.viewmodel.ThemeViewModel
 
 object Routes {
     const val LOGIN = "login"
@@ -44,7 +45,8 @@ object Routes {
 fun NavGraph(
     navController: NavHostController,
     authViewModel: AuthViewModel,
-    languageViewModel: LanguageViewModel
+    languageViewModel: LanguageViewModel,
+    themeViewModel: ThemeViewModel
 ) {
     NavHost(navController = navController, startDestination = Routes.LOGIN) {
         composable(Routes.LOGIN) {
@@ -60,7 +62,8 @@ fun NavGraph(
             SettingsScreen(
                 authViewModel = authViewModel,
                 navController = navController,
-                languageViewModel = languageViewModel
+                languageViewModel = languageViewModel,
+                themeViewModel = themeViewModel
             )
         }
         composable(Routes.PROFILE) {

@@ -8,14 +8,16 @@ import androidx.activity.viewModels
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.compose.rememberNavController
 import com.example.focuspro.navigation.NavGraph
 import com.example.focuspro.repository.AuthRepository
 import com.example.focuspro.repository.FirestoreRepository
-
 import com.example.focuspro.ui.theme.FocusProTheme
 import com.example.focuspro.viewmodel.AuthViewModel
 import com.example.focuspro.viewmodel.AuthViewModelFactory
+import com.example.focuspro.viewmodel.ThemeViewModel
 
 class MainActivity : ComponentActivity() {
 
@@ -28,14 +30,24 @@ class MainActivity : ComponentActivity() {
     // Instancia de LanguageViewModel manualmente con el contexto de la aplicación
     private val languageViewModel: LanguageViewModel by lazy { LanguageViewModel(applicationContext) }
 
+    // Instancia de ThemeViewModel
+    private val themeViewModel: ThemeViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Aplicamos el tema de la app
-            FocusProTheme {
+            // Observamos el estado del tema (oscuro o claro) desde el ThemeViewModel
+            val isDarkTheme by themeViewModel.isDarkTheme.collectAsState()
+
+            // Aplicamos el tema de la app según el estado actual
+            FocusProTheme(darkTheme = isDarkTheme) {
                 // Superficie principal de la app
                 Surface(color = MaterialTheme.colorScheme.background) {
-                    MainApp(authViewModel = authViewModel, languageViewModel = languageViewModel)
+                    MainApp(
+                        authViewModel = authViewModel,
+                        languageViewModel = languageViewModel,
+                        themeViewModel = themeViewModel // Pasamos ThemeViewModel a la app
+                    )
                 }
             }
         }
@@ -44,7 +56,11 @@ class MainActivity : ComponentActivity() {
 
 // Función Composable principal que define la estructura de la app
 @Composable
-fun MainApp(authViewModel: AuthViewModel, languageViewModel: LanguageViewModel) {
+fun MainApp(
+    authViewModel: AuthViewModel,
+    languageViewModel: LanguageViewModel,
+    themeViewModel: ThemeViewModel
+) {
     // Recordamos el controlador de navegación para manejar las pantallas
     val navController = rememberNavController()
 
@@ -55,6 +71,7 @@ fun MainApp(authViewModel: AuthViewModel, languageViewModel: LanguageViewModel) 
     NavGraph(
         navController = navController,
         authViewModel = authViewModel,
-        languageViewModel = languageViewModel
+        languageViewModel = languageViewModel,
+        themeViewModel = themeViewModel // Pasamos ThemeViewModel al NavGraph
     )
 }

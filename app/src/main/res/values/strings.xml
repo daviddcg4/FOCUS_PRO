@@ -180,6 +180,8 @@
     <string name="accept_terms_button">Aceptar terminos y condiciones</string>
     <string name="decline_terms_button">Denegar terminos y condiciones</string>
     <string name="ok">OK</string>
+    <string name="focus_mode">Focus Mode</string>
+    <string name="break_mode">Break Mode</string>
 
 
 </resources>

@@ -14,7 +14,7 @@ import com.example.focuspro.R
 
 @Composable
 fun DailySummaryScreen(navController: NavController) {
-    // Simulated data for daily summary
+    // datos simulados
     val totalActiveTime = "3h 45m"
     val completedTasks = listOf(
         stringResource(id = R.string.task_workout),
@@ -33,7 +33,7 @@ fun DailySummaryScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        // Title
+        // titulo
         Text(
             text = stringResource(id = R.string.daily_summary),
             fontSize = 28.sp,
@@ -41,18 +41,18 @@ fun DailySummaryScreen(navController: NavController) {
             modifier = Modifier.padding(vertical = 16.dp)
         )
 
-        // Daily statistics section
+        // estadisticas
         DailyStatistics(totalActiveTime)
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Completed tasks
+        // tareas completadas
         SectionTitle(title = stringResource(id = R.string.completed_tasks))
         TaskList(tasks = completedTasks, completed = true)
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Pending tasks
+        // tareas pendientes
         SectionTitle(title = stringResource(id = R.string.pending_tasks))
         TaskList(tasks = pendingTasks, completed = false)
     }

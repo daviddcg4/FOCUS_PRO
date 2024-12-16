@@ -1,5 +1,4 @@
 package com.example.focuspro.taskManager.view
-
 import TaskViewModel
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,11 +24,9 @@ import com.example.focuspro.R
 import com.example.focuspro.taskManager.model.entity.Task
 import com.example.focuspro.taskManager.model.entity.TaskPriority
 
-
 @Composable
 fun TaskManagerScreen(navController: NavController, viewModel: TaskViewModel = viewModel()) {
     var showDialog by remember { mutableStateOf(false) }
-    // Recolecta taskList como estado de Compose
     val taskList by viewModel.taskList.collectAsState()
 
     Column(
@@ -50,7 +47,8 @@ fun TaskManagerScreen(navController: NavController, viewModel: TaskViewModel = v
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
-            items(taskList) { task -> // Usa taskList aquí
+            items(taskList) { task ->
+                println("renderizado de tasks")
                 TaskItem(
                     task = task,
                     onTaskCompleted = { viewModel.toggleTaskCompletion(it) },

@@ -18,11 +18,11 @@ import com.example.focuspro.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(navController: NavController, viewModel: TaskViewModel = viewModel()) {
-    // Variables to track the app runtime
+    // Variables para controlar la rutina
     var startTime by remember { mutableStateOf(SystemClock.elapsedRealtime()) }
     var elapsedTime by remember { mutableStateOf("0m") }
 
-    // LaunchedEffect to update elapsed time every second
+    // LaunchedEffect para actualizar el tiempo transcurrido
     LaunchedEffect(true) {
         while (true) {
             val currentTime = SystemClock.elapsedRealtime()
@@ -45,18 +45,17 @@ fun DashboardScreen(navController: NavController, viewModel: TaskViewModel = vie
             )
         }
     ) { innerPadding ->
-        // Use innerPadding to prevent content from overlapping with the TopAppBar
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
                 .padding(16.dp)
         ) {
-            // Summary Section
+            // Resumen de la sección
             SummarySection(elapsedTime = elapsedTime)
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Task List Section
+            // Task List
             TaskListSection(viewModel = viewModel)
         }
     }
@@ -69,7 +68,7 @@ fun SummarySection(elapsedTime: String) {
         modifier = Modifier.fillMaxWidth()
     ) {
         SummaryCard(title = stringResource(id = R.string.focus_time), value = elapsedTime)
-        TasksCompletedCard(completed = 7, total = 10) // You can adjust this dynamically
+        TasksCompletedCard(completed = 7, total = 10)
     }
 }
 
@@ -134,13 +133,13 @@ fun SummaryCard(title: String, value: String) {
 
 @Composable
 fun TaskListSection(viewModel: TaskViewModel) {
-    // Observe the task list
+    // task list
     val taskList by viewModel.taskList.collectAsState(initial = emptyList())
 
     Text(stringResource(id = R.string.priority_tasks), fontSize = 18.sp)
     Spacer(modifier = Modifier.height(8.dp))
 
-    // Show tasks dynamically
+    // ver tareas de forma dinamica
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(taskList) { task ->
             TaskItem(taskName = task.title)

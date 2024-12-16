@@ -37,7 +37,7 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
     fun registerUser(email: String, password: String, name: String) {
         viewModelScope.launch {
             val user = authRepository.registerUser(email, password, name)
-            // Maneja la lógica después del registro
+            // logica para el registro
             if (user != null) {
                 _currentUser.value = user
                 _registrationSuccess.value = true // Registro exitoso
@@ -50,7 +50,7 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
     fun loginUser(email: String, password: String) {
         viewModelScope.launch {
             val user = authRepository.loginUser(email, password)
-            // Maneja la lógica después del inicio de sesión
+            // logica post inicio de sesion
             if (user != null) {
                 _currentUser.value = user
                 _loginSuccess.value = true // Inicio de sesión exitoso
@@ -80,7 +80,7 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
         }
     }
 
-    // Opcional: Resetear el estado de éxito después de la navegación
+    // FIXME: Resetear el estado de éxito después de la navegación
     fun resetRegistrationState() {
         _registrationSuccess.value = null
     }
@@ -89,7 +89,7 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
         _loginSuccess.value = null
     }
 
-    // Resetear el estado de cambio de contraseña
+    // FIXME: Resetear el estado de cambio de contraseña
     fun resetPasswordChangeState() {
         _passwordChangeSuccess.value = null
     }

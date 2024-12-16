@@ -42,7 +42,7 @@ class AuthRepository(private val firestoreRepository: FirestoreRepository) {
     // Método para cambiar la contraseña del usuario
     suspend fun changeUserPassword(user: FirebaseUser, newPassword: String): Boolean {
         return try {
-            user.updatePassword(newPassword).await() // Asegúrate de usar Kotlin Coroutines para hacer esta llamada
+            user.updatePassword(newPassword).await()
             true
         } catch (e: Exception) {
             false

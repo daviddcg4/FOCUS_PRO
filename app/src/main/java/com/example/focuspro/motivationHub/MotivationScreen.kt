@@ -19,7 +19,7 @@ import kotlin.random.Random
 
 @Composable
 fun MotivationScreen(navController: NavController) {
-    // List of motivational quotes using string resources
+    // Lista de notas motivacioneles
     val quotes = listOf(
         stringResource(id = R.string.motivational_quote_1),
         stringResource(id = R.string.motivational_quote_2),
@@ -28,10 +28,10 @@ fun MotivationScreen(navController: NavController) {
         stringResource(id = R.string.motivational_quote_5)
     )
 
-    // State for the current quote
+    // estado de la tarea actual
     var currentQuote by remember { mutableStateOf(quotes[0]) }
 
-    // List of personal goals
+    // Lista de objetivos personales
     val goals = listOf(
         stringResource(id = R.string.goal_read_book),
         stringResource(id = R.string.goal_exercise),
@@ -39,7 +39,7 @@ fun MotivationScreen(navController: NavController) {
         stringResource(id = R.string.goal_meditate),
         stringResource(id = R.string.goal_save_money),
 
-        ).toMutableStateList() // Convert list to a mutable state list
+        ).toMutableStateList()
 
     Column(
         modifier = Modifier
@@ -48,7 +48,7 @@ fun MotivationScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Motivational quote
+        // nota motivacional
         Text(
             text = currentQuote,
             fontSize = 20.sp,
@@ -59,7 +59,7 @@ fun MotivationScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Button to change the quote
+        // Button para cambiar la nota
         Button(onClick = {
             currentQuote = quotes[Random.nextInt(quotes.size)]
         }) {
@@ -68,7 +68,7 @@ fun MotivationScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Title for goals
+        // Title
         Text(
             text = stringResource(id = R.string.my_goals),
             fontSize = 24.sp,
@@ -77,7 +77,7 @@ fun MotivationScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // List of goals
+        // Lista de objetivos
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -110,6 +110,6 @@ fun GoalItem(goal: String) {
 @Preview(showBackground = true)
 @Composable
 fun MotivationScreenPreview() {
-    // You may need to provide a NavController instance here for previews
+
     MotivationScreen(navController = rememberNavController())
 }

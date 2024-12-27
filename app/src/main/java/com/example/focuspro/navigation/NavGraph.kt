@@ -1,15 +1,12 @@
 package com.example.focuspro.navigation
 
-import ChatScreen
 import DailySummaryScreen
 import DashboardScreen
 import HomeScreen
 import LanguageViewModel
-
 import LoginScreen
 import MotivationScreen
 import ProgressScreen
-import RankingScreen
 import RegisterScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -87,14 +84,8 @@ fun NavGraph(
         composable(Routes.DASHBOARD) {
             DashboardScreen(navController = navController)
         }
-        composable(Routes.CHAT) {
-            ChatScreen(navController = navController)
-        }
         composable(Routes.ACTIVITY_RINGS) {
             ActivityRingsScreen(navController = navController)
-        }
-        composable(Routes.RANKING) {
-            RankingScreen()
         }
     }
 }

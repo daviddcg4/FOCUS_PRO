@@ -61,7 +61,7 @@ fun MainApp(
     languageViewModel: LanguageViewModel,
     themeViewModel: ThemeViewModel
 ) {
-    // Recordamos el controlador de navegación para manejar las pantallas
+
     val navController = rememberNavController()
 
     // Verificamos si el usuario ya está autenticado para definir la pantalla inicial
@@ -72,6 +72,6 @@ fun MainApp(
         navController = navController,
         authViewModel = authViewModel,
         languageViewModel = languageViewModel,
-        themeViewModel = themeViewModel // Pasamos ThemeViewModel al NavGraph
+        themeViewModel = themeViewModel
     )
 }

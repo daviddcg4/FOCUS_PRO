@@ -56,9 +56,8 @@ fun ProfileScreen(authViewModel: AuthViewModel, navController: NavController) {
                 onConfirmNewPasswordChange = { confirmNewPassword = it },
                 onChangePassword = {
                     if (newPassword == confirmNewPassword) {
-                        // Call the function from the ViewModel to change the password
-                        authViewModel.changePassword(newPassword) // Ensure this function is implemented
-                        passwordChangeError = null // Reset error message
+                        authViewModel.changePassword(newPassword)
+                        passwordChangeError = null // Reset errror
                     } else {
                         //FIXME: Revisar esta linea
 //                        passwordChangeError = stringResource(id = R.string.passwords_do_not_match)
@@ -68,12 +67,12 @@ fun ProfileScreen(authViewModel: AuthViewModel, navController: NavController) {
             )
         }
 
-        Spacer(modifier = Modifier.weight(1f)) // Push content upwards
+        Spacer(modifier = Modifier.weight(1f))
 
         // Logout button
         LogoutButton(onLogout = {
             authViewModel.logoutUser()
-            navController.navigate("login") // Navigate to the login screen
+            navController.navigate("login") // Navegacion hacia el login
         })
     }
 }
@@ -128,7 +127,7 @@ fun PasswordChangeSection(
             Text(stringResource(id = R.string.change_password))
         }
 
-        // Show error message if exists
+        // mostrar mensaje de error si hay
         if (!errorMessage.isNullOrEmpty()) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
@@ -148,7 +147,7 @@ fun LogoutButton(onLogout: () -> Unit) {
         colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
     ) {
         Icon(imageVector = Icons.Filled.Close, contentDescription = "Logout")
-        Spacer(modifier = Modifier.width(8.dp)) // Spacing between icon and text
+        Spacer(modifier = Modifier.width(8.dp)) // espacio entre iconos y texto
         Text(stringResource(id = R.string.logout))
     }
 }

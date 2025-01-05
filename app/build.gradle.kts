@@ -80,6 +80,8 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.7.4")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
 
+    implementation (libs.coil.compose)
+
 
 
 

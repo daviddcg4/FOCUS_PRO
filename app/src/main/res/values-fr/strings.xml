@@ -140,4 +140,6 @@
     <string name="priority_low">Basse</string>
     <string name="priority_medium">Moyenne</string>
     <string name="priority_high">Élevée</string>
+    <string name="pomodoro_content_description">Pomodoro</string>
+    <string name="start_pomodoro">Start Pomodoro</string>
 </resources>

@@ -8,11 +8,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -53,7 +56,8 @@ fun TaskManagerScreen(navController: NavController, viewModel: TaskViewModel = v
                 TaskItem(
                     task = task,
                     onTaskCompleted = { viewModel.toggleTaskCompletion(it) },
-                    onTaskDeleted = { viewModel.deleteTask(it) }
+                    onTaskDeleted = { viewModel.deleteTask(it) },
+                    onPomodoroClick = { navController.navigate("pomodoro") }
                 )
             }
         }
@@ -74,8 +78,11 @@ fun TaskManagerScreen(navController: NavController, viewModel: TaskViewModel = v
 fun TaskItem(
     task: Task,
     onTaskCompleted: (Task) -> Unit,
-    onTaskDeleted: (Task) -> Unit
+    onTaskDeleted: (Task) -> Unit,
+    onPomodoroClick: (Task) -> Unit,
 ) {
+    val isChecked = remember { mutableStateOf(task.isCompleted) }
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -84,8 +91,11 @@ fun TaskItem(
     ) {
         // Checkbox para marcar la tarea como completada
         Checkbox(
-            checked = task.isCompleted,
-            onCheckedChange = { onTaskCompleted(task) }
+            checked = isChecked.value,
+            onCheckedChange = { isCheckedValue ->
+                isChecked.value = isCheckedValue
+                onTaskCompleted(task.copy(isCompleted = !isCheckedValue)) // Cambiar el estado de la tarea, necesario !isCheckedValue para que se actualice correctamente a true a la hora de marcarlo como checked
+            }
         )
 
         // Texto para mostrar el título de la tarea
@@ -96,6 +106,15 @@ fun TaskItem(
                 .padding(start = 8.dp),
             style = TextStyle(fontSize = 16.sp)
         )
+
+        IconButton(onClick = { onPomodoroClick(task) }) {
+            Icon(
+                painter = painterResource(id = R.drawable.clock), // Iconos personalizados
+                contentDescription = stringResource(id = R.string.start_pomodoro),
+                tint = Color.Unspecified,
+                modifier = Modifier.size(20.dp) //FIXME: revisar tamanio del icono
+            )
+        }
 
         // Indicativo de prioridad
         val priorityColor = when (task.priority) {
@@ -122,6 +141,7 @@ fun TaskItem(
         }
     }
 }
+
 
 @Composable
 fun TaskDialog(onDismiss: () -> Unit, onTaskAdded: (String, TaskPriority) -> Unit) {

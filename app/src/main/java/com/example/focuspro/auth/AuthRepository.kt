@@ -31,9 +31,6 @@ class AuthRepository(private val firestoreRepository: FirestoreRepository) {
         }
     }
 
-
-
-
     fun logoutUser() {
         auth.signOut()
     }
